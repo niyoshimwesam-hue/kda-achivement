@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KDA Student Achievement Portal</title>
+  <style>
+    /* ====== BASIC STYLE ====== */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+    body { background: #f5f6fa; color: #333; }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 { font-size: 24px; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    section { padding: 50px; max-width: 1200px; margin: auto; }
+
+    /* ====== HOME ====== */
+    .home {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1200&q=60') center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      border-radius: 10px;
+    }
+    .home h2 { font-size: 42px; margin-bottom: 20px; }
+    .home p { font-size: 18px; }
+
+    /* ====== ACHIEVEMENTS ====== */
+    .achievements h2, .gallery h2, .news h2, .admin h2 { text-align: center; margin-bottom: 30px; color: #003366; }
+    .achievement-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .card h3 { margin: 10px 0 5px; color: #003366; }
+    .card p { font-size: 14px; }
+
+    /* ====== GALLERY ====== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+      height: 150px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .gallery-grid img:hover { transform: scale(1.05); }
+
+    /* ====== NEWS ====== */
+    .news article {
+      background: white;
+      padding: 20px;
+      border-left: 5px solid #003366;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    .news article h3 { color: #003366; margin-bottom: 10px; }
+
+    /* ====== SEARCH ====== */
+    .search-box {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .search-box input {
+      width: 60%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    /* ====== ADMIN PANEL ====== */
+    .admin-panel {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .admin-panel label { display: block; margin: 10px 0 5px; }
+    .admin-panel input, .admin-panel textarea, .admin-panel select {
+      width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;
+    }
+    .admin-panel button {
+      background: #003366;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    .admin-panel button:hover { background: #00509e; }
+
+    footer {
+      text-align: center;
+      background: #003366;
+      color: white;
+      padding: 15px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>KDA Student Achievement Portal</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#news">News</a>
+      <a href="#admin">Admin</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="home">
+    <h2>Celebrating Student Excellence</h2>
+    <p>Recognizing achievements in academics, sports, arts, and leadership to inspire every learner at KDA.</p>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="achievements">
+    <h2>Student Achievements</h2>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search achievements...">
+    </div>
+    <div class="achievement-container" id="achievementContainer">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=800&q=60" alt="">
+        <h3>Best Science Project</h3>
+        <p><b>Student:</b> Alice M.</p>
+        <p>Recognized for innovation in the annual science fair.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=60" alt="">
+        <h3>Football Captain Award</h3>
+        <p><b>Student:</b> Brian K.</p>
+        <p>Led the KDA team to regional victory 2025.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=60" alt="">
+        <h3>Art Champion</h3>
+        <p><b>Student:</b> Carol N.</p>
+        <p>Won 1st place in national art competition.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
+    <h2>Photo & Video Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=400&q=60" alt="">
+      <img src="https://images.unsplash.com/photo-1606326608693-df9885e93009?auto=format&fit=crop&w=400&q=60" alt="">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=60" alt="">
+      <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=400&q=60" alt="">
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news" class="news">
+    <h2>News & Updates</h2>
+    <article>
+      <h3>Upcoming Sports Day 2025</h3>
+      <p>Join us for a fun and competitive event showcasing KDA's talented athletes!</p>
+    </article>
+    <article>
+      <h3>New Art Studio Opening</h3>
+      <p>The new facility will support creativity and innovation for all KDA students.</p>
+    </article>
+  </section>
+
+  <!-- ADMIN PANEL -->
+  <section id="admin" class="admin">
+    <h2>Admin Panel (Demo)</h2>
+    <div class="admin-panel">
+      <label>Student Name</label>
+      <input type="text" placeholder="Enter student name">
+
+      <label>Achievement Title</label>
+      <input type="text" placeholder="Enter title">
+
+      <label>Category</label>
+      <select>
+        <option>Academic</option>
+        <option>Sports</option>
+        <option>Arts</option>
+        <option>Leadership</option>
+      </select>
+
+      <label>Description</label>
+      <textarea rows="4" placeholder="Describe the achievement"></textarea>
+
+      <button>Submit Achievement</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 KDA School | Designed with ❤️ by KDA Web Team</p>
+  </footer>
+
+  <script>
+    // ===== Search Filter Script =====
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.card');
+
+    searchInput.addEventListener('keyup', () => {
+      const filter = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(filter) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
